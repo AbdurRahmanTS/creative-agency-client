@@ -19,7 +19,7 @@ const Review = () => {
         formData.append('title', review.title);
         formData.append('description', review.description);
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://nameless-island-05634.herokuapp.com/addReview', {
             method: 'POST',
             body: formData
         })

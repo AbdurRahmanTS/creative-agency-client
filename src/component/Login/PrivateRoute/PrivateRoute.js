@@ -20,6 +20,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     const setLogin = { ...loggedInUser };
     setLogin.email = decodedToken.email;
     setLogin.name = decodedToken.name;
+    setLogin.photo = decodedToken.picture;
     setLoggedInUser(setLogin);
     return decodedToken.exp > currentTime;
   }

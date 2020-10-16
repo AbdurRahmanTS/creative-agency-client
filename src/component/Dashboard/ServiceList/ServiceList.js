@@ -7,11 +7,12 @@ import UserServiceList from '../UserServiceList/UserServiceList';
 const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [serviceListData, setServicesListData] = useState([]);
+    const [isAdmin, setIsAdmin] = useState(false);
     
-    const email = serviceListData.find(userService => userService.email === loggedInUser.email)
+    // const email = serviceListData.find(userService => userService.email === loggedInUser.email)
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesList', {
+        fetch('https://nameless-island-05634.herokuapp.com/servicesList', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -22,7 +23,15 @@ const ServiceList = () => {
             })
     }, [])
 
-    
+    useEffect(() => {
+        fetch('https://nameless-island-05634.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+    }, [])
     
 
     
@@ -40,11 +49,11 @@ const ServiceList = () => {
                         </ul>
                     </div>
                 </nav>
-                <div className="p-5 w-100 h-100" style={{ position: "absolute", backgroundColor: "#F4FDFB" }}>
+                <div className="row p-5 w-100 h-100" style={{ position: "absolute", backgroundColor: "#F4FDFB" }}>
 
                     {
-                        email ? serviceListData.map(serviceList => <UserServiceList key={serviceList._id} serviceList={serviceList}></UserServiceList>)
-                            : <AdminServiceList serviceListData={serviceListData} ></AdminServiceList>
+                        isAdmin ? <AdminServiceList serviceListData={serviceListData} ></AdminServiceList>
+                            : serviceListData.map(serviceList => <UserServiceList key={serviceList._id} serviceList={serviceList}></UserServiceList>)
                     }
                 </div>
             </div>

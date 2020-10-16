@@ -16,7 +16,7 @@ const MakeAdmin = () => {
         const formData = new FormData()
         formData.append('email', admin.email);
 
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://nameless-island-05634.herokuapp.com/addAdmin', {
             method: 'POST',
             body: formData
         })
@@ -46,7 +46,7 @@ const MakeAdmin = () => {
                 </nav>
                 <div className="pt-5 pl-5 h-100" style={{ backgroundColor: "#F4FDFB" }}>
                     <form className="form-inline h-50 pt-3 pl-5 bg-white mr-5 rounded-lg" onSubmit={handleSubmit}>
-                        <div className="col-12 pt-0">
+                        <div className="col-12 pt-0 mb-3">
                             <label className="float-left" htmlFor="exampleInputEmail1">Email</label>
                         </div>
                         <div className="form-group mx-sm-2 mb-2 w-50" style={{ marginTop: -165 }} >

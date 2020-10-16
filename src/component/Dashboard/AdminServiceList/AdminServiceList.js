@@ -2,7 +2,7 @@ import React from 'react';
 
 const AdminServiceList = ({ serviceListData }) => {
     const handleChange = (id, e) => {
-        fetch(`http://localhost:5000/updateOrder/${id}`, {
+        fetch(`https://nameless-island-05634.herokuapp.com/updateOrder/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ status: e.target.value })

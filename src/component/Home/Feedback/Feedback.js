@@ -4,7 +4,7 @@ import FeedbackList from '../FeedbackList/FeedbackList';
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/feedbacks')
+        fetch('https://nameless-island-05634.herokuapp.com/feedbacks')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, [])

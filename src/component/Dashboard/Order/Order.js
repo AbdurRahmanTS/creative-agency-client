@@ -12,7 +12,7 @@ const Order = () => {
     const [serviceInfo, setServicesInfo] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://nameless-island-05634.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 const orderInfo = data.find(order => orderName.orderName === order.title);
@@ -41,7 +41,7 @@ const Order = () => {
         formData.append('price', serviceInfo.price);
         formData.append('img', serviceInfo.img.img);
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://nameless-island-05634.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })
@@ -91,7 +91,7 @@ const Order = () => {
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input onChange={handleFileChange} type="file" className="form-control-file" name="icon" required />
+                                    <input onChange={handleFileChange} type="file" className="form-control-file" name="icon" />
                                 </div>
                             </div>
                         </div>
