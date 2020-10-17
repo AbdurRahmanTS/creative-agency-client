@@ -91,7 +91,7 @@ const Order = () => {
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input onChange={handleFileChange} type="file" className="form-control-file" name="icon" />
+                                    <input onChange={handleFileChange} type="file" className="form-control-file" name="icon" required />
                                 </div>
                             </div>
                         </div>
