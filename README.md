@@ -1,3 +1,26 @@
+# Creative Agency Client
+
+•	Creative Agency is an online learning platform. It has two-panel dashboards.
+•	Users can order service and feedback on this website. Client feedback will show on the home page.
+•	Admin can add service and change service status. Added Service will show on the home page.
+
+**Technology:**
+React.js
+Node.js
+Heroku
+Firebase
+MongoDB
+React Router
+HTML5
+CSS3
+Bootstrap
+
+[Creative Agency Live Site](https://creative-agency-d559c.web.app/)
+
+[Resume](https://drive.google.com/file/d/1YlGe8VpJQ2WboVKa_oQ9kQRV5bS6wGNZ/view)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
