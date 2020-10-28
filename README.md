@@ -1,4 +1,4 @@
-# Creative Agency Client Site
+# Creative Agency
 
 Creative Agency is an online learning platform.<br />
 It has two-panel dashboards.<br />
